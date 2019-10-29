@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import 'lib-flexible'; // 淘宝弹性布局方案
 import App from './App.vue';
 // import Vant from 'vant';
 
