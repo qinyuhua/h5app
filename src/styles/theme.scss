@@ -1,0 +1,82 @@
+$primary-color: rgb(213, 76, 70);  // 全局主色
+$primary-text-color: #000; // 黑色
+$primary-background-color: #fff;  // 白色
+$dark-background-color: #fbfbfb; // 灰色背景
+$success-color: #52c41a;                         // 成功色
+$warning-color: #faad14;                         // 警告色
+$error-color: rgb(213, 76, 70);                  // 错误色
+
+$header-text-color: #2e384d;  // 头部文字
+$header-background-color: #fff; // 头部背景
+$search-text-color: #959396; // 搜索文字
+$search-background-color: #f7f7f7; // 搜索背景
+$entrance-title-color: #2f3039; // 功能区域标题颜色
+
+$link-color: #ea4a27;  // 链接色
+
+// 年费政策
+$text-color-nfzc: #fc7559;
+$background-color-nfzc: #fff2f2;
+$text-color-xykts: #bdbdbd;
+// 银行优惠
+$text-bank-color: #666;
+$background-reward-color: #fff7f7;
+$background-preReward-color: #f4f4f4;
+$text-reward-color: #ea4a27;
+$text-preReward-color: #8C8C8C;
+// 更多
+$text-more-color: #bdbdbd;
+// 基本信息
+$text-basics-info: #464646;
+
+$bg-apply-color: linear-gradient(to right, #da1905, #ff7e61);
+$bg-btn-color:linear-gradient(129deg, rgba(249,126,97,1) 0%, rgba(248,77,105,1) 100%);
+
+
+$font-size-base: 32px;                           // 主字号
+$heading-color: rgba(0, 0, 0, 1);              // 标题色
+
+$text-color: rgba(0, 0, 0, .65);                 // 主文本色
+$text-color-secondary : rgba(0, 0, 0, .45);      // 次文本色
+
+$disabled-color : rgba(0, 0, 0, .25);            // 失效色
+$border-radius-base: 4px;                        // 组件/浮层圆角
+$border-color-base: #d9d9d9;                     // 边框色
+$box-shadow-base: 0 2px 8px rgba(0, 0, 0, .15);  // 浮层阴影
+
+$bg-color: #fff;                               //body背景色
+$bg-linear-gradient: linear-gradient(226deg,rgba(255,126,97,1) 0%,rgba(218,25,5,1) 100%);
+$bg-linear-gradientwc: linear-gradient(to right, #FCEECF,  #F8D8A2);
+$bg-dark-color: #f7f7f7; // 灰色背景
+
+
+$text-color-one: #000;
+$text-color-two: #666;
+$text-color-three: #9b9b9b;
+$text-color-four: #ccc;
+$text-color-warning: #f5a623;
+
+@mixin afterBorder($border:1PX, $lastBorder: none){
+  position: relative;
+  overflow: hidden;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-bottom: $border solid #dedde2;
+  }
+  &:last-child {
+    &:after {
+      border: $lastBorder !important;
+    }
+  }
+}
+
+.bule {
+  // 年费政策
+  $text-color-nfzc: red;
+  $background-color-nfzc: #fff2f2;
+  $text-color-xykts: #bdbdbd;
+}

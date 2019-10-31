@@ -1,0 +1,138 @@
+// 首页雪碧图
+.functionalEntrance {
+  .pic {
+    background: url("./assets/index/nav.png") no-repeat;
+    background-size: 204px 68px;
+    &.iconStatement {
+      background-position: -68px 0;
+    }
+    &.iconAccount {
+      background-position: -136px 0;
+    }
+    &.iconInvitationAgent {
+      background-position: 0 0;
+    }
+  }
+}
+.account-link-wrap {
+  .pic {
+    background: url("./assets/personCenter/hold.png") no-repeat;
+    background-size: 112px 112px;
+    &.iconOrder {
+      background-position: -56px -56px;
+    }
+    &.iconRegister {
+      background-position: 0 -56px;
+    }
+    &.iconCustomerService {
+      background-position: -56px 0;
+    }
+    &.iconMySet {
+      background-position: 0 0;
+    }
+  }
+}
+.productEntrance {
+  .picSingular{
+    background: url('./assets/index/productSingular.png') no-repeat;
+    background-size: 730px 720px;
+    //width: 730px; height: 720px;
+    &.debitCard {
+      background-position: -6px -366px;
+    }
+    &.creditCard {
+      background-position: -6px -546px
+    }
+    &.etc {
+      background-position: -6px -186px;
+    }
+    &.manage {
+      background-position: -6px -6px;
+    }
+  }
+  .pic {
+    background: url("./assets/index/product.png") no-repeat;
+    background-size: 370px 680px;
+    &.debitCard {
+      background-position: 0 -340px;
+    }
+    &.creditCard {
+      background-position: 0 -510px;
+    }
+    &.etc {
+      background-position: 0 -170px;
+    }
+    &.manage {
+      background-position: 0 0px;
+    }
+  }
+}
+
+// 空列表雪碧图
+.empty_sprites {
+  margin: 0 auto;
+  background: url("./assets/sprites/empty_sprites.png") no-repeat;
+  background-size: 703px 400px;
+  &.cardList {
+    margin-top: 96px;
+    width: 107px;
+    height: 104px;
+    background-position: -0 -0;
+  }
+  &.myLowLevel, &.myfans {
+    width: 200px;
+    height: 200px;
+    background-position: -503px -0;
+  }
+  &.order, &.payment {
+    margin-top: 34px;
+    width: 198px;
+    height: 200px;
+    background-position: -107px -0;
+  }
+  &.invitationAgent {
+    margin-top: 96px;
+    width: 200px;
+    height: 200px;
+    background-position: -503px -0;
+  }
+  &.message {
+    margin-top: 96px;
+    width: 200px;
+    height: 200px;
+    background-position: -305px -0;
+  }
+  &.statement {
+    margin-top: 96px;
+    width: 198px;
+    height: 200px;
+    background-position: -0px -200px;
+  }
+  &.businessList {
+    margin-top: 96px;
+    width: 198px;
+    height: 200px;
+    background-position: -0px -200px;
+  }
+}
+
+// 信用卡详情页雪碧图
+.card_detail_sprites {
+  margin: 0 auto;
+  width: 122px;
+  height: 102px;
+  background: url("./assets/sprites/card_detail_sprites.png") no-repeat;
+  background-size: 488px 100px;
+  &.bg-text {
+    background-position: -0 -0;
+  }
+  &.bg-copy {
+    background-position: -122px -0;
+  }
+  &.bg-sweep {
+    background-position: -244px -0;
+  }
+  &.bg-card {
+    background-position: -366px -0;
+  }
+}
