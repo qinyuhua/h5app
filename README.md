@@ -1,6 +1,6 @@
 # h5app
 
-## Project setup
+## 初始化页面 Project setup 
 ```
 npm install
 ```

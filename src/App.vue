@@ -1,17 +1,22 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <transition name="slide">
+      <keep-alive>
+        <router-view v-if="$route.meta.keepAlive"></router-view>
+      </keep-alive>
+    </transition>
+    <transition name="slide">
+      <router-view v-if="!$route.meta.keepAlive"></router-view>
+    </transition>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
-
+  import Vue from 'vue';
+  import { Icon } from 'vant';
+  Vue.use(Icon);
 export default {
   name: 'app',
-  components: {
-    HelloWorld
-  }
 }
 </script>
 

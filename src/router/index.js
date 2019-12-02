@@ -1,12 +1,12 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-// import store from './../store/index'
 
 Vue.use(Router);
 let routes = [
   {
     path: '/',
     meta: { hasLogin: false, },
+    component: () => import('@/views/index/index.vue'),
     beforeEnter: (to, from, next) => {
       // const { commit } = store;
       next();
@@ -40,6 +40,7 @@ routerContext.keys().forEach(route => {
     return
   }
   const routerModule = routerContext(route)
+  // console.log(routerModule);
   /**
    * 兼容 import export 和 require module.export 两种规范
    */
