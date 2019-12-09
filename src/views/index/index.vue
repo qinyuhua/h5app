@@ -4,22 +4,12 @@
             项目汇总
         </div>
         <div class="demoBody">
-            <div class="demoDiv">
-                <!--<img class="img" />-->
+            <div class="demoDiv" @click="goToDemo()">
                 <div class="title">项目一</div>
             </div>
-            <!-- <div class="demoDiv">
-                <div class="title">项目二</div>
+            <div class="demoDiv" @click="goToCmsWeb()">
+                <div class="title">香溢贷</div>
             </div>
-            <div class="demoDiv">
-                <div class="title">项目三</div>
-            </div>
-            <div class="demoDiv">
-                <div class="title">项目四</div>
-            </div>
-            <div class="demoDiv">
-                <div class="title">项目五</div>
-            </div> -->
         </div>
     </div>
 
@@ -27,11 +17,26 @@
 
 <script>
     export default {
-
+      methods: {
+        goToDemo() {
+          this.$router.push({
+            path: '/demo/js',
+            query: {
+              name: '项目一',
+            }
+          })
+        },
+        goToCmsWeb() {
+          this.$router.push({
+            path: '/cms-web/home',
+          })
+        }
+      }
     }
 </script>
 
 <style lang="scss" scoped>
+
     .header {
         font-size: 40px;
         margin: 0 auto;
@@ -59,7 +64,7 @@
         margin: 10px 10px;
         .title {
             text-align: center;
-            font-size: 22px;
+            font-size: 30px;
             margin: auto;
         }
         .img {

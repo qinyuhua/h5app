@@ -4,7 +4,6 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const postcss = px2rem({
   remUnit: 75, // 基准大小 baseSize，需要和rem.js中相同
-  remPrecision: 2,
 });
 
 const NODE_ENV = process.env.NODE_ENV;

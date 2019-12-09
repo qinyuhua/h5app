@@ -11,7 +11,7 @@ let routes = [
       // const { commit } = store;
       next();
     }
-  }
+  },
 ];
 
 /**
@@ -30,17 +30,14 @@ let routes = [
  * 这三个都是作为函数的属性(注意是作为函数的属性,函数也是对象,有对应的属性)
  */
 const routerContext = require.context('./', true, /index\.js$/)
-// console.dir(routerContext);
-// console.log('keys:', routerContext.keys());
-// console.log('id:', routerContext.id);
-// console.log('resolve:', routerContext.resolve(routerContext.keys()[0]));
+
 routerContext.keys().forEach(route => {
-  // 如果是根目录的 index.js 、不处理
+
+  // 如果是根目录的 index.js (即当前文件)、不处理
   if (route.startsWith('./index')) {
     return
   }
   const routerModule = routerContext(route)
-  // console.log(routerModule);
   /**
    * 兼容 import export 和 require module.export 两种规范
    */
