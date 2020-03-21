@@ -3,6 +3,7 @@ import 'lib-flexible'; // 淘宝弹性布局方案
 import App from './App.vue';
 import store from './store/index';
 import router from './router/index';
+import  'echarts';
 import './plugins/vant-ui.js'
 import './styles/theme.scss'
 

@@ -29,4 +29,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
+
+.van-dialog__message {
+  line-height: 30px !important;
+}
 </style>

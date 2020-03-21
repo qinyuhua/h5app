@@ -1,22 +1,51 @@
 <template>
     <div class="wrap functionalEntrance layout">
-        <div>每月</div>
-        <input v-model="wageIncome"/>
-        <div>每月基数</div>
-        <input v-model="socialBase"/>
-        <div>税前年薪</div>
-        <input v-model="allIncome"/>
-        <div>
-            <span>每月社保：</span><span>{{socialInsurance}}</span>
+      <h5>工薪所得</h5>
+      <div class="divBody amountDiv">
+        <div>每月税前工资</div>
+        <div class="amountCss">
+          <span>￥&nbsp;&nbsp;</span>
+          <input v-model="wageIncome" placeholder="请输入税前工资" />
+        </div>
+        <div>缴纳城市</div>
+        <div class="amountCss">
+          <span>上海</span>
+        </div>
+      </div>
 
+      <div class="divBody socialDiv">
+        <div class="title">
+          <span>是否缴纳社保公积金</span>
+          <van-switch class="f_right" v-model="checked" size="24"/>
         </div>
-        <div>
-            <span>年社保：</span><span>{{allsocialInsurance}}</span>
+        <div v-if="checked">
+          <div>
+            <span>
+              社保基数&nbsp;&nbsp;
+              <van-icon color="#0f7ffc" name="info-o" @click="socialBaseDialog"/>
+            </span><br/>
+            <div class="amountCss">
+              <span>￥&nbsp;&nbsp;</span>
+              <input v-model="wageIncome" placeholder="请输入社保基数" />
+            </div>
+            <span>据上海的政策，社保缴纳范围： 4927-24633</span>
+          </div>
+          <div>税前年薪</div>
+          <input v-model="allIncome"/>
+          <div>
+              <span>每月社保：</span><span>{{socialInsurance}}</span>
+
+          </div>
+          <div>
+              <span>年社保：</span><span>{{allsocialInsurance}}</span>
+          </div>
+          <div>
+              <span>每月公积金：</span>
+              <span>{{accumulationFund}}</span>
+          </div>
         </div>
-        <div>
-            <span>每月公积金：</span>
-            <span>{{accumulationFund}}</span>
-        </div>
+      </div>
+        
         <div>
             <span>年公积金：</span>
             <span>{{allAccumulationFund}}</span>
@@ -46,6 +75,11 @@
 </template>
 
 <script>
+import Vue from 'vue';
+import { Switch, Icon, Dialog } from 'vant';
+Vue.use(Switch);
+Vue.use(Icon);
+Vue.use(Dialog);
   export default {
     data() {
       return {
@@ -62,6 +96,7 @@
           { label: '超过960000元的部分', min: 660000, tax: 0.45, amount: 181920}
         ],
         isShow: true,
+        checked: true,
       }
     },
     computed: {
@@ -153,7 +188,14 @@
       }
     },
     methods: {
-
+      socialBaseDialog () {
+        Dialog.confirm({
+          title: '社保基数',
+          message: '首次参加工作和变更工作单位的职工，为进单位首月全月税前工资收入。其他职工当年个人缴费基数为职工上一年度一月至12月的所有税前工资收入所得的月平均额。',
+          width: 250,
+          className: 'dialogConfirmCss'
+        });
+      }
     }
 
   }
@@ -161,36 +203,42 @@
 
 <style lang="scss" scoped>
     .layout {
-        font-size: 27px;
+        font-size: 28px;
+        line-height:30px;
+        background-color: #f2f2f2;
     }
-    .header {
-        height: 300px;
-        background-color: #0f7ffc;
-        color: #ffffff;
-        text-align: center;
-        .title {
-            font-size: 45px;
-            font-weight: 500;
-            padding-top: 70px;
-
-        }
-        .subTitle {
-            padding-top: 20px;
-            font-size: 30px;
-        }
+    input {
+      border: none;
+      height: 70px;
     }
-    .btn {
-        font-size: 30px;
-        color: #ffffff;
-        display: block;
-        width: 80%;
-        height: 100px;
-        line-height: 100px;
-        margin: 20px auto;
-        background-color: #0f7ffc;
-        text-align: center;
-        border-radius: 50px;
+    .divBody {
+      margin: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px 20px 20px 20px;
+    }
+    .f_right {
+      float: right;
+      margin-top: 5px;
+    }
+    .amountCss {
+      height: 80px;
+      line-height: 80px;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 20px;
     }
 
+    .socialDiv {
+      .title {
+        height: 70px;
+        line-height: 70px;
+      }
+
+    }
+    .dialogConfirmCss {
+      font-size: 30px;
+      line-height: 35px;
+    }
+    
 
 </style>

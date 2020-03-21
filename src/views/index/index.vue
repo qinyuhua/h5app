@@ -10,6 +10,10 @@
             <div class="demoDiv" @click="goToCmsWeb()">
                 <div class="title">香溢贷</div>
             </div>
+
+            <div class="demoDiv" @click="goToEcharts()">
+                <div class="title">Echarts</div>
+            </div>
         </div>
     </div>
 
@@ -29,6 +33,11 @@
         goToCmsWeb() {
           this.$router.push({
             path: '/cms-web/home',
+          })
+        },
+        goToEcharts() {
+          this.$router.push({
+            path: '/echarts/lineDemo',
           })
         }
       }
