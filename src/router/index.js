@@ -1,7 +1,7 @@
 import Vue from 'vue';
-import Router from 'vue-router';
+import vueRouter from 'vue-router';
 
-Vue.use(Router);
+Vue.use(vueRouter);
 let routes = [
   {
     path: '/',
@@ -44,7 +44,7 @@ routerContext.keys().forEach(route => {
   routes = [...routes, ...(routerModule.default || routerModule)]
 })
 
-const router = new Router({
+const router = new vueRouter({
   mode: 'history',
   routes,
 })

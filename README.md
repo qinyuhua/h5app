@@ -1,5 +1,8 @@
 # h5app
 
+```
+此项目是Vue.js 开发的，只是自己的一些小的demo
+```
 ## 初始化页面 Project setup 
 ```
 npm install

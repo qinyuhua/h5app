@@ -1,6 +1,7 @@
 const Js = () => import('@/views/Demo/JS/index.vue').then(m => m.default);
 const Wage = () => import('@/views/Demo/WageCalculator/index.vue').then(m => m.default);
 const WageCalculator = () => import('@/views/Demo/WageCalculator/calculator.vue').then(m => m.default);
+const Study = () => import('@/views/Demo/Study/index.vue').then(m => m.default);
 
 export default [
   {
@@ -20,6 +21,13 @@ export default [
   {
     path: '/demo/wage/calculator',
     component: WageCalculator,
+    meta: {
+      hasLogin: false,
+    }
+  },
+  {
+    path: '/demo/study',
+    component: Study,
     meta: {
       hasLogin: false,
     }

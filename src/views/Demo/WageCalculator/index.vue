@@ -4,19 +4,17 @@
             <div class="title">欢迎使用工资个税计算器</div>
             <div class="subTitle">快速精准计算税前税后金额</div>
         </div>
-        <div>
-            <div>
-                <span>个税新政立即算</span><br/>
-                <span>专项附加扣除准确知，纳税基数更精确</span>
-            </div>
-            <div>
-                <span>年薪个税快速算</span><br/>
-                <span>输入税前月薪，年薪税后明细一键获取</span>
-            </div>
-            <div>
-                <span>其他所得税自动算</span><br/>
-                <span>多类税种灵活选，支持更多计算需求</span>
-            </div>
+        <div class="bodyText">
+            <span class="title">个税新政立即算</span>
+            <span class="subTitle">专项附加扣除准确知，纳税基数更精确</span>
+        </div>
+        <div class="bodyText">
+            <span class="title">年薪个税快速算</span>
+            <span class="subTitle">输入税前月薪，年薪税后明细一键获取</span>
+        </div>
+        <div class="bodyText">
+            <span class="title">其他所得税自动算</span>
+            <span class="subTitle">多类税种灵活选，支持更多计算需求</span>
         </div>
         <div>
             <span class="btn" @click="gotoOpen">立即体验</span>
@@ -64,10 +62,24 @@
         width: 80%;
         height: 100px;
         line-height: 100px;
-        margin: 20px auto;
+        margin: 50px auto 30px auto;
         background-color: #0f7ffc;
         text-align: center;
         border-radius: 50px;
+    }
+    .bodyText {
+        text-align: center;
+        padding-top: 50px;
+        .title {
+            font-size: 30px;
+            font-weight: 600;
+            display: block;
+        }
+        .subTitle {
+            font-size: 26px;
+            padding-top: 10px;
+            display: block;
+        }
     }
 
 

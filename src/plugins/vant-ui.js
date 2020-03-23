@@ -5,6 +5,7 @@ import {
   Field, Toast, Checkbox, CheckboxGroup,
   Loading, Lazyload, Row, Col, Icon,
   List, PullRefresh, DatetimePicker, PasswordInput, NumberKeyboard,
+  Collapse,
 } from 'vant'
 
 Vue.use(NavBar)
@@ -23,4 +24,5 @@ Vue.use(Icon)
 Vue.use(List)
 Vue.use(PullRefresh)
 Vue.use(DatetimePicker)
+Vue.use(Collapse)
 Vue.use(PasswordInput).use(NumberKeyboard)

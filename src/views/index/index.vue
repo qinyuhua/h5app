@@ -10,6 +10,9 @@
             <div class="demoDiv" @click="goToCmsWeb()">
                 <div class="title">香溢贷</div>
             </div>
+            <div class="demoDiv" @click="goToStudyDemo()">
+                <div class="title">Vue 知识点学习</div>
+            </div>
         </div>
     </div>
 
@@ -29,6 +32,11 @@
         goToCmsWeb() {
           this.$router.push({
             path: '/cms-web/home',
+          })
+        },
+        goToStudyDemo() { // 跳转学习页面
+          this.$router.push({
+            path: '/demo/study',
           })
         }
       }

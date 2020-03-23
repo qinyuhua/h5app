@@ -19,6 +19,8 @@
 </template>
 
 <script>
+
+  import { Base64 } from 'js-base64';
   export default {
     data() {
       return {
@@ -57,8 +59,8 @@
     },
     mounted () {
       // todo mounted 模板编译/挂载之后
-      // console.log('mounted================');
-
+      console.log('mounted================');
+      this.setCookie('token', '2');
     },
 
     beforeUpdate () {
@@ -102,9 +104,35 @@
         this.$router.push({
           path: '/demo/wage',
         })
-      }
+      },
+      setCookie(name, value, time){
+        const times = time || 30 * 30 * 48;
+        const d = new Date();
+        d.setTime(d.getTime() + (times * 60 * 1000));
+        document.cookie = `${name}=${Base64.encode(value)};expires=${d.toGMTString()};path=/`;
+      },
+      getCookie(name) {
+        const ca = document.cookie.split('; '); // ca格式例如["name=xiaoming", "age=25"]
+        let str;
+        for (let i = 0; i < ca.length; i += 1) {
+          if (name === 'token') {
+            if (ca[i].startsWith('token=')) {
+              const c = ca[i].split('token=');
+              str = Base64.decode(c[1]);
+              return str;
+            }
+          }
+          const c = ca[i].split('='); // c格式例如["name", "xiaoming"]
+          if (c[0] === name) {
+            str = Base64.decode(c[1]);
+            return str;
+          }
+        }
+        return str;
+      },
 
-    }
+
+  }
 
   }
 </script>

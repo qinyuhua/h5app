@@ -142,8 +142,8 @@
           arr.push({
             income: i,
             beforeIncome: amount,
-            afterIncome: this.wageIncome - (this.wageIncome - amount) * 0.03,
-            taxRevenue: (this.wageIncome - amount) * 0.03,
+            afterIncome: (this.wageIncome - (this.wageIncome - amount) * 0.03).toFixed(2),
+            taxRevenue: ((this.wageIncome - amount) * 0.03).toFixed(2),
             // sumIncome:
           })
         }
