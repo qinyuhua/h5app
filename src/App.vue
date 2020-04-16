@@ -32,4 +32,8 @@ export default {
     margin: auto;
   }
 
+
+.van-dialog__message {
+  line-height: 30px !important;
+}
 </style>
