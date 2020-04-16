@@ -264,9 +264,9 @@ angular只有在指定的事件触发时进行脏值检测，大致如下：
     <p>Original: {{reversedMessage}}</p>
 </div>
 ```
-```javascript
+``` 
 computed: {
-  reversedMessage: function() {
+  reversedMessage: function () {
     return this.message.split('').reverse().join('')
   }
 }

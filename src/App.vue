@@ -21,12 +21,15 @@ export default {
 </script>
 
 <style>
-#app {
-  margin: 0 auto;
-  max-width: 750px;
-  height: 100%;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-}
+@import "./styles/normalize.scss";
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /*text-align: center;*/
+    color: #2c3e50;
+    max-width: 750px;
+    margin: auto;
+  }
+
 </style>

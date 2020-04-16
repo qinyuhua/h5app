@@ -8,10 +8,12 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
- html {
+html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
   height: 100%;
+  font-family:SourceHanSansCN-Normal,SourceHanSansCN;
+  background-color: #F2F2F2;
 }
 
 /* Sections
@@ -69,7 +71,7 @@ hr {
  */
 
 pre {
-  font-family: monospace, monospace; /* 1 */
+  font-family: SourceHanSansCN-Normal,SourceHanSansCN;
   font-size: 1em; /* 2 */
 }
 
@@ -121,7 +123,7 @@ i {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace; /* 1 */
+  font-family:SourceHanSansCN-Normal,SourceHanSansCN;
   font-size: 1em; /* 2 */
 }
 
@@ -178,16 +180,12 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit; /* 1 */
+  font-family:SourceHanSansCN-Normal,SourceHanSansCN;
   font-size: 100%; /* 1 */
   line-height: 1.15; /* 1 */
   margin: 0; /* 2 */
 }
-input {
-  &:disabled {
-    background-color: transparent;
-  }
-}
+
 /**
  * Show the overflow in IE.
  * 1. Show the overflow in Edge.
@@ -371,4 +369,8 @@ template {
 ul, li {
   list-style: none;
   padding: 0;
+}
+
+::-webkit-input-placeholder {
+  color: #8D8D8D;
 }
