@@ -85,7 +85,6 @@
       // HelloWorld
     },
     mounted () {
-      console.log(this.$data);
     },
     data () {
       return {

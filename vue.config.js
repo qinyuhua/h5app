@@ -20,12 +20,9 @@ module.exports = {
           postcss
         ]
       },
-      // sass: {
-      //   data: `
-      //   @import "@/styles/theme.scss";
-      //   @import "@/styles/vant.scss";
-      //   `
-      // }
+      sass: {
+        prependData: `@import "~@/styles/theme.scss"; @import "@/styles/vant.scss";`
+      }
     }
   },
   configureWebpack: config => {

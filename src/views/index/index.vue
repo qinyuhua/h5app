@@ -16,6 +16,9 @@
             <div class="demoDiv" @click="goToWechatAccount()">
                 <div class="title">微信公众号</div>
             </div>
+            <div class="demoDiv" @click="goToCalendarDate()">
+                <div class="title">阴历日期</div>
+            </div>
         </div>
     </div>
 
@@ -46,7 +49,12 @@
           this.$router.push({
             path: '/wechat/home',
           })
-        }
+        },
+        goToCalendarDate() { // 跳转学习页面
+          this.$router.push({
+            path: '/calendar/index',
+          })
+        },
       }
     }
 </script>

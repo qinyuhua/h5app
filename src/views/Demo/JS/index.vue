@@ -1,26 +1,33 @@
 <template>
-    <div class="wrap functionalEntrance">
-        <h3>测试DEMO</h3>
-        <div>指令</div>
-        <div v-if="seen">是否显示{{seen}}</div>
-        <span>{{ message }}</span>
-        <input type="text" v-model="message" />
-        <input type="text" v-model="nameInput"/>
-        <input type="button" @click="change" value="更新数据"/>
-        <input type="button" v-on:click="destroy" value="销毁"/>
-        <input type="button" v-on:click="changeSeen" value="隐藏"/><br/>
-        <div id="example">
-            <p>Original: {{message}}</p>
-            <p>Original: {{reversedMessage}}</p>
-        </div>
-
-        <input type="button" v-on:click="gotoWage" value="计算器"/>
+  <div class="wrap functionalEntrance">
+    <h3>测试DEMO</h3>
+    <div>指令</div>
+    <div v-if="seen">是否显示{{seen}}</div>
+    <span>{{ message }}</span>
+    <input type="text" v-model="message" />
+    <input type="text" v-model="nameInput"/>
+    <input type="button" @click="change" value="更新数据"/>
+    <input type="button" v-on:click="destroy" value="销毁"/>
+    <input type="button" v-on:click="changeSeen" value="隐藏"/><br/>
+    <div id="example">
+      <p>Original: {{message}}</p>
+      <p>Original: {{reversedMessage}}</p>
     </div>
+
+    <input type="button" v-on:click="gotoWage" value="计算器"/>
+    <br />
+    <br />
+    <br />
+    <ComputedDemo />
+  </div>
 </template>
 
 <script>
 
   import { Base64 } from 'js-base64';
+
+  import ComputedDemo from './computedDemo.vue';
+
   export default {
     data() {
       return {
@@ -30,10 +37,12 @@
         seen: true,
       }
     },
+    components: {
+      ComputedDemo,
+    },
     beforeCreate () {
       // todo 组件实例刚被创建，组件属性计算之前，如 data 属性等
       // console.log('beforeCreate================');
-      // console.log('this.$data', this.$data);
       // console.log('this.$el', this.$el)
       // console.log('this.message', this.message)
     },
@@ -59,7 +68,6 @@
     },
     mounted () {
       // todo mounted 模板编译/挂载之后
-      console.log('mounted================');
       this.setCookie('token', '2');
     },
 
@@ -149,6 +157,7 @@
         text-overflow: ellipsis;
         text-align: center;
         line-height: 90px;
+
     }
 
 </style>

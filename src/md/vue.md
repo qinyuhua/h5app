@@ -279,3 +279,65 @@ computed 计算属性，目的是避免在模板中有太多的表达式，导�
 ### 5.2 侦听属性。
 
 Vue 提供了一种更通用的方式来观察和响应Vue实例上的数据变动：侦听属性。
+
+
+# 深入理解Vue的computed实现原理及其实现方式
+
+> 计算属性：当其**依赖的属性值**发生变化时，计算属性会重新计算，反之，则使用缓存中的属性值。
+
+* computed 用来监控自己定义的变量，该变量不能在data中生命，直接在computed里面定义，和变量是同样的语法。
+* computed 多个变量或者对象进行处理后返回一个结果值，监控多个变量中任一变量发生变化时，该变量就会自动重新计算。
+
+```vue
+<template>
+  <div>
+    <input type="button" @click="changeA" value="数据加一"/>
+    <p>a的值为： {{a}}</p>
+    <p>aDouble的值为： {{aDouble}}</p>
+    <p>aPlus的值为： {{aPlus}}</p>
+  </div>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        a: 1,
+      }
+    },
+    computed: {
+      aDouble: function () {
+        return this.a * 2;
+      },
+      aPlus: {
+        get: function () {
+          return this.a + 1;
+        },
+        set: function (v) {
+          this.a = v - 1;
+        }
+      }
+    },
+    methods:{
+      changeA () {
+        this.a += 1;
+      }
+    }
+  };
+</script>
+<style lang="scss" scoped>
+</style>
+
+```
+
+**与watch之间的区别：**
+
+watch 主要用于监控Vue实例的变化，监控变量必须在data 里面声明才可以，它可以监控一个变量，也可以是一个对象。但是只能监控整个对象或者变量，不能监控对象里面的变量。  
+watch 一般用于 监控路由、input 输入框的值特殊处理等等，它比较适合的场景是一个数据影响多个数据。
+
+**计算属性** 可用于快速计算视图(View) 中显示的属性。这些计算将被缓存，并且只在需要时更新。
+
+在Vue中有多种方法为视图设置值：  
+* 使用指令直接将数据值绑定到视图
+* 使用简单的表达式对内容进行简单的转换
+* 使用过滤器对内容进行简单的转换
+

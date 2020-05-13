@@ -12,6 +12,7 @@
     "core-js": "^3.3.2",
     "echarts": "^4.7.0",
     "lib-flexible": "^0.3.2",
+    "moment": "^2.24.0",
     "node-sass": "^4.13.1",
     "numeral": "^2.0.6",
     "sass-loader": "^8.0.0",
