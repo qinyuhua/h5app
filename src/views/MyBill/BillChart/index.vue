@@ -124,7 +124,7 @@
           class="li"
           v-for="(item, index) in accountBooks"
           :key="index"
-          @click="gotoInfo"
+          @click="gotoInfo(item)"
       >
         <div class="number">{{index}}</div>
         <div class="back"
@@ -204,9 +204,13 @@
         const cur = this.curDate
         this.curDate = cur;
       },
-      gotoInfo(){
+      gotoInfo(val){
+        const { billType } = val;
         this.$router.push({
           path: '/myBill/billInfo/index',
+          query: {
+            type: billType,
+          }
         })
       },
       handleQueryAll() {

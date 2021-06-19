@@ -71,9 +71,11 @@ export const replaceYear = (time, type = '.') => {
     // IOS  new Date 时，获取有问题，需要将. - 替换为/
     date = new Date(time.replace(/\./g, '/').replace(/\-/g, '/'));
   }
+
   const year = date.getFullYear();
   const month = addZero(date.getMonth() + 1);
   const day = addZero(date.getDate());
+
   if (type === '年') {
     return `${year}年${month}月${day}日`;
   }
