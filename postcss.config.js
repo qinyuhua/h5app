@@ -6,6 +6,10 @@ module.exports = {
         zindex: false,
         autoprefixer: false
       }
-    }
+    },
+    'postcss-pxtorem': {
+      rootValue: 37.5,
+      propList: ['*'],
+    },
   }
 }

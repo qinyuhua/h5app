@@ -19,6 +19,12 @@
             <div class="demoDiv" @click="goToCalendarDate()">
                 <div class="title">阴历日期</div>
             </div>
+            <div class="demoDiv" @click="goToWebSocket()">
+                <div class="title">websocket</div>
+            </div>
+            <div class="demoDiv" @click="goToMyBIll()">
+                <div class="title">我的账单</div>
+            </div>
         </div>
     </div>
 
@@ -55,6 +61,16 @@
             path: '/calendar/index',
           })
         },
+          goToWebSocket() { // 跳转学习页面
+          this.$router.push({
+            path: '/mySocket/index',
+          })
+        },
+        goToMyBIll() { // 跳转学习页面
+          this.$router.push({
+            path: '/myBill/index',
+          })
+        },
       }
     }
 </script>
@@ -62,7 +78,7 @@
 <style lang="scss" scoped>
 
 .header {
-  font-size: 40px;
+  font-size: 20px;
   margin: 0 auto;
   color: #2e384d;
   font-weight: 700;
@@ -82,15 +98,15 @@
 }
 .demoDiv {
   /*width: 100px;*/
-  height: 100px;
-  line-height: 100px;
+  height: 50px;
+  line-height: 50px;
   padding: 0 20px;
   background-color: #D7F0BC;
   border-radius: 10px;
   margin: 10px 10px;
   .title {
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
     margin: auto;
   }
   .img {

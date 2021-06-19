@@ -84,7 +84,7 @@ button {
         width: 300px;
         height: 88px;
         border-radius: 88px;
-        background: $bg-linear-gradient;
+        //background: ;
         color: #fff;
         font-size: 36px;
       }
@@ -174,4 +174,33 @@ button {
 
 .business-list-item {
   @include border1pxBottom(2px, #ececec)
+}
+
+.list-li {
+  height: 56px;
+  padding: 8px 15px 0 15px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between ;
+  box-sizing: border-box;
+  .right {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .title {
+    font-size: 16px;
+    color: #000;
+  }
+  .time {
+    font-size: 12px;
+    color: #9b9b9b;
+    padding: 4px 0;
+  }
+  .income {
+    color: #FC9123;
+  }
+}
+.list-li:last-child {
+  border-bottom: none;
+  border-radius: 0 5px;
 }

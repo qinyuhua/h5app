@@ -2,12 +2,15 @@ import moment from 'moment';
 
 let CalendarData = new Array(100);
 const madd = new Array(12);
+// 十天干，用来编排年分和日期
 const tgString = "甲乙丙丁戊己庚辛壬癸";
+// 十二地支, 中国古代拿它和天干相配，用来表示年、月、时的次序。
 const dzString = "子丑寅卯辰巳午未申酉戌亥";
+
 const numString = "一二三四五六七八九十";
 const numZeroString = "零一二三四五六七八九十";
 const monString = "正二三四五六七八九十冬腊";
-const weekString = "日一二三四五六";
+// const weekString = "日一二三四五六";
 const sx = "鼠牛虎兔龙蛇马羊猴鸡狗猪";
 let cYear,
   cMonth,
@@ -87,6 +90,11 @@ function e2c() {
   }
 }
 
+/**
+ *
+ *
+ * @constructor
+ */
 function GetcDateObj(){
   const tmpObj = {};
   tmpObj.yearString = tgString.charAt((cYear - 4) % 10) + dzString.charAt((cYear - 4) % 12);

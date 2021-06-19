@@ -6,6 +6,8 @@ import {
   Loading, Lazyload, Row, Col, Icon,
   List, PullRefresh, DatetimePicker, PasswordInput, NumberKeyboard,
   Collapse,
+  ActionSheet,
+  Calendar,
 } from 'vant'
 
 Vue.use(NavBar)
@@ -26,3 +28,5 @@ Vue.use(PullRefresh)
 Vue.use(DatetimePicker)
 Vue.use(Collapse)
 Vue.use(PasswordInput).use(NumberKeyboard)
+Vue.use(ActionSheet);
+Vue.use(Calendar);
